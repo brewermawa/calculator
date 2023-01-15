@@ -5,6 +5,7 @@ let sum = document.querySelector("#sum");
 let minus = document.querySelector("#minus");
 let multiplication = document.querySelector("#multiplication");
 let division = document.querySelector("#division");
+let negative = document.querySelector("#negative");
 let equals = document.querySelector("#equals");
 let operand1 = null;
 let operand2 = null;
@@ -23,6 +24,7 @@ function addEventsToSigns() {
     minus.addEventListener("click", minusClicked);
     multiplication.addEventListener("click", multiplicationClicked);
     division.addEventListener("click", divisionClicked);
+    negative.addEventListener("click", negativeClicked);
     equals.addEventListener("click", equalsClicked);
 }
 
@@ -123,6 +125,18 @@ function divisionClicked() {
     dotEntered = false;
     lastButtonClicked = "division";
 };
+
+function negativeClicked() {
+    const number = parseFloat(screen.textContent);
+    if (number !== "0") {
+        if (number > 0) {
+            screen.textContent = -Math.abs(number);
+        }
+        else {
+            screen.textContent = Math.abs(number);
+        }
+    }
+}
 
 function equalsClicked() {
     operand2 = parseFloat(screen.textContent);
