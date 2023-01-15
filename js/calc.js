@@ -6,6 +6,7 @@ let minus = document.querySelector("#minus");
 let multiplication = document.querySelector("#multiplication");
 let division = document.querySelector("#division");
 let negative = document.querySelector("#negative");
+let backSpace = document.querySelector("#back-space");
 let equals = document.querySelector("#equals");
 let operand1 = null;
 let operand2 = null;
@@ -25,6 +26,7 @@ function addEventsToSigns() {
     multiplication.addEventListener("click", multiplicationClicked);
     division.addEventListener("click", divisionClicked);
     negative.addEventListener("click", negativeClicked);
+    backSpace.addEventListener("click", backSpaceClicked);
     equals.addEventListener("click", equalsClicked);
 }
 
@@ -136,6 +138,19 @@ function negativeClicked() {
             screen.textContent = Math.abs(number);
         }
     }
+}
+
+function backSpaceClicked() {
+    number = screen.textContent;
+
+    if (number.length === 1) {
+        number = "0";
+    }
+    else {
+        number = number.slice(0, -1);
+    }
+
+    screen.textContent = number;
 }
 
 function equalsClicked() {
