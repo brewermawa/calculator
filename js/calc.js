@@ -143,7 +143,9 @@ function negativeClicked() {
 function backSpaceClicked() {
     number = screen.textContent;
 
-    if (number.length === 1) {
+    if (number.length === 1 ||
+        (parseFloat(number) < 0 && number.length === 2) ||
+        parseFloat(number) < 0 && number.length === 4 && number.charAt(2) === ".") {
         number = "0";
     }
     else {
