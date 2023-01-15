@@ -168,13 +168,13 @@ function equalsClicked() {
 function operate() {
     switch (operation) {
         case "sum":
-            screen.textContent = (operand1 + operand2).toFixed(8);
+            screen.textContent = (operand1 + operand2);
             return operand1 + operand2;
         case "minus":
-            screen.textContent = (operand1 - operand2).toFixed(8);
+            screen.textContent = (operand1 - operand2);
             return operand1 - operand2;
         case "multiplication":
-            screen.textContent = (operand1 * operand2).toFixed(8);
+            screen.textContent = (operand1 * operand2);
             return operand1 * operand2;
         case "division":
             screen.textContent = (operand1 / operand2).toFixed(8);
